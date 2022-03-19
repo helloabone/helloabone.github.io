@@ -206,16 +206,19 @@ p.texti-plan3 {
     font-size: 24px !important;
 }
 
+.texti-plan1,
 .texti-plan1 span {
     color: #0e5ea8;
     font-weight: bold;
 }
 
+.texti-plan2,
 .texti-plan2 span {
     color: #e31668;
     font-weight: bold;
 }
 
+.texti-plan3,
 .texti-plan3 span {
     color: #49a934;
     font-weight: bold;
