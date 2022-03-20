@@ -160,6 +160,10 @@ footer .copy-right {
     margin: 0 auto;
 }
 
+.img-qrcode {
+    width: 128px;
+}
+
 /* font styles */
 .font-sm {
     font-size: 16px;
