@@ -12,7 +12,7 @@ html {
 }
 
 body {
-    background-color: #fff;
+    background-color: #282923;
     margin-bottom: 40px;
 }
 
@@ -206,7 +206,8 @@ footer .copy-right {
 
 p.texti-plan1,
 p.texti-plan2,
-p.texti-plan3 {
+p.texti-plan3,
+p.texti-plan4 {
     color: #000;
     font-size: 24px !important;
 }
@@ -225,7 +226,13 @@ p.texti-plan2 span {
 
 .texti-plan3,
 p.texti-plan3 span {
-    color: #49a934;
+    color: #98189c;
+    font-weight: bold;
+}
+
+.texti-plan4,
+p.texti-plan4 span {
+    color: #282923;
     font-weight: bold;
 }
 
@@ -304,13 +311,35 @@ p.texti-plan3 span {
   z-index: 2;
 }
 
+
+/* custom background */
+.bg-plan1 {
+    background: #dce1e7;
+    padding: 20px;
+}
+
+.bg-plan2 {
+    background: #e5d7dd;
+    padding: 20px;
+}
+
+.bg-plan3 {
+    background: #e3d5e3;
+    padding: 20px;
+}
+
+.bg-plan4 {
+    background: #d2e3d2;
+    padding: 20px;
+}
+
 /* custom jumbotron */
 .jumbotron-plan1,
 .jumbotron-plan2,
 .jumbotron-plan3,
-.jumbotron-contact {
+.jumbotron-plan4 {
     color: #fff;
-    margin: 60px 0;
+    margin: 20px 0;
     padding: 40px 0 1px;
     text-align: center;
     font-weight: bold;
@@ -320,7 +349,7 @@ p.texti-plan3 span {
 .jumbotron-plan1 h2,
 .jumbotron-plan2 h2,
 .jumbotron-plan3 h2,
-.jumbotron-contact h2 {
+.jumbotron-plan4 h2 {
     font-size: 42px !important;
 }
 
@@ -336,19 +365,19 @@ p.texti-plan3 span {
 
 .jumbotron-plan3 {
     color: #fff;
-    background-color: #49a934;
+    background-color: #98189c;
 }
 
-.jumbotron-contact {
+.jumbotron-plan4 {
     color: #fff;
-    background-color: #282923;
+    background-color: #00b900;
 }
 
 
 small.plan1,
 small.plan2,
 small.plan3,
-small.contact {
+small.plan4 {
     font-size: 0.7em;
 }
 
@@ -357,15 +386,15 @@ small.plan1 {
 }
 
 small.plan2 {
-    color: #dbaec0;
+    color: #e1bccb;
 }
 
 small.plan3 {
-    color: #c9dbc5;
+    color: #c380c5;
 }
 
-small.contact {
-    color: #c3c4c3;
+small.plan4 {
+    color: #a5dfa5;
 }
 
 .page-header {
@@ -417,7 +446,11 @@ small.contact {
 }
 
 .my-section h3.plan3 i {
-    color: #49a934;
+    color: #98189c;
+}
+
+.my-section h3.plan4 i {
+    color: #00b900;
 }
 
 
@@ -574,11 +607,11 @@ small.contact {
     }
 
     #my-carousel .carousel-caption h2 {
-        font-size: 5vw;
+        font-size: 8vw;
     }
 
     #my-carousel .carousel-caption h3 {
-        font-size: 4vw;
+        font-size: 6vw;
     }
 
     #my-carousel .carousel-caption p {
