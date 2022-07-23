@@ -204,12 +204,19 @@ footer .copy-right {
     padding: 10px 0;
 }
 
+p.texti-plan0,
 p.texti-plan1,
 p.texti-plan2,
 p.texti-plan3,
 p.texti-plan4 {
-    color: #000;
+    color: #555;
     font-size: 24px !important;
+}
+
+.texti-plan0,
+p.texti-plan0 span {
+    color: #282923;
+    font-weight: bold;
 }
 
 .texti-plan1,
@@ -232,7 +239,7 @@ p.texti-plan3 span {
 
 .texti-plan4,
 p.texti-plan4 span {
-    color: #282923;
+    color: #016f68;
     font-weight: bold;
 }
 
@@ -313,6 +320,11 @@ p.texti-plan4 span {
 
 
 /* custom background */
+.bg-plan0 {
+    background: #d2e3d2;
+    padding: 20px;
+}
+
 .bg-plan1 {
     background: #dce1e7;
     padding: 20px;
@@ -329,11 +341,12 @@ p.texti-plan4 span {
 }
 
 .bg-plan4 {
-    background: #d2e3d2;
+    background: #e0e9e9;
     padding: 20px;
 }
 
 /* custom jumbotron */
+.jumbotron-plan0,
 .jumbotron-plan1,
 .jumbotron-plan2,
 .jumbotron-plan3,
@@ -343,14 +356,19 @@ p.texti-plan4 span {
     padding: 40px 0 1px;
     text-align: center;
     font-weight: bold;
-    border-radius: 10px;
 }
 
+.jumbotron-plan0 h2,
 .jumbotron-plan1 h2,
 .jumbotron-plan2 h2,
 .jumbotron-plan3 h2,
 .jumbotron-plan4 h2 {
     font-size: 42px !important;
+}
+
+.jumbotron-plan0 {
+    color: #fff;
+    background-color: #00b900;
 }
 
 .jumbotron-plan1 {
@@ -370,15 +388,20 @@ p.texti-plan4 span {
 
 .jumbotron-plan4 {
     color: #fff;
-    background-color: #00b900;
+    background-color: #048981;
 }
 
 
+small.plan0,
 small.plan1,
 small.plan2,
 small.plan3,
 small.plan4 {
     font-size: 0.7em;
+}
+
+small.plan0 {
+    color: #a5dfa5;
 }
 
 small.plan1 {
@@ -394,7 +417,7 @@ small.plan3 {
 }
 
 small.plan4 {
-    color: #a5dfa5;
+    color: #b9d5d3;
 }
 
 .page-header {
@@ -437,6 +460,10 @@ small.plan4 {
     font-size: 22px;
 }
 
+.my-section h3.plan0 i {
+    color: #00b900;
+}
+
 .my-section h3.plan1 i {
     color: #0e5ea8;
 }
@@ -450,7 +477,7 @@ small.plan4 {
 }
 
 .my-section h3.plan4 i {
-    color: #00b900;
+    color: #048981;
 }
 
 
