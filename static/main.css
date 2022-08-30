@@ -204,6 +204,11 @@ footer .copy-right {
     padding: 10px 0;
 }
 
+.texti-code,
+.texti-code * {
+    font-family: Consolas, "Microsoft JhengHei" !important;
+}
+
 p.texti-plan0,
 p.texti-plan1,
 p.texti-plan2,
@@ -241,6 +246,11 @@ p.texti-plan3 span {
 p.texti-plan4 span {
     color: #016f68;
     font-weight: bold;
+}
+
+ol.its-flow li {
+    font-size: 18px;
+    margin: 10px;
 }
 
 .texti-subject {
