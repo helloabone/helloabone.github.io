@@ -610,6 +610,10 @@ small.plan4 {
     border-width: 5px;
 }
 
+.fix-width120 {
+    width: 120px;
+}
+
 @media (max-width:767px) {
     .navbar-main .navbar-collapse {
         margin: 0px -30px;
