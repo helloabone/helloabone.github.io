@@ -248,9 +248,9 @@ p.texti-plan4 span {
     font-weight: bold;
 }
 
-ol.its-flow li {
-    font-size: 18px;
-    margin: 10px;
+ol.its-flow * {
+    font-size: 20px;
+    margin: 6px;
 }
 
 .texti-subject {
@@ -678,5 +678,9 @@ small.plan4 {
 
     .list-group-item {
         font-size: 22px !important;
+    }
+
+    ol.its-flow * {
+        font-size: 20px;
     }
 }
