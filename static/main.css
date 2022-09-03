@@ -148,6 +148,27 @@ footer .copy-right {
     font-weight: bold;
 }
 
+.jumbotron-btn {
+    border-radius: 6px;
+}
+
+/* custom jumbotron */
+.jumbotron-lineme {
+    color: #fff;
+    margin-top: 60px;
+    padding: 30px 10px 20px 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.jumbotron-lineme h2 {
+    font-size: 32px !important;
+}
+
+.jumbotron-lineme {
+    background-color: #00b900;
+}
+
 .img-logo {
     height: 30px;
     vertical-align: middle;
