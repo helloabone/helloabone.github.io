@@ -253,7 +253,7 @@ p.texti-plan1 span {
 
 .texti-plan2,
 p.texti-plan2 span {
-    color: #f01a97;
+    color: #ee0a8f;
     font-weight: bold;
 }
 
@@ -420,7 +420,7 @@ ol.its-flow * {
 
 .jumbotron-plan2 {
     color: #fff;
-    background-color: #f01a97;
+    background-color: #ee0a8f;
 }
 
 .jumbotron-plan3 {
@@ -511,7 +511,7 @@ small.plan4 {
 }
 
 .my-section h3.plan2 i {
-    color: #f01a97;
+    color: #ee0a8f;
 }
 
 .my-section h3.plan3 i {
