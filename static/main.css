@@ -87,7 +87,8 @@ footer .copy-right {
 
 .navbar-main .navbar-toggler {
     padding: 3px 8px 2px 8px;
-    border: solid 1px #fff !important;
+    background-color: #282923;
+    border: solid 1px #282923 !important;
     border-radius: 0px;
 }
 
@@ -641,8 +642,11 @@ ul.outline {
     }
 
 	.navbar-main .nav-item .nav-link:hover {
-		color: #fff;
-	}
+        background-color: #fff;
+        color: #282923 !important;
+        border-radius: 3px;
+    }
+
     .navbar-main .nav-item .nav-link.btn {
         margin-top: 20px;
     }
