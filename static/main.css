@@ -80,18 +80,14 @@ footer .copy-right {
     border-bottom: solid 1px #282923;
 }
 
-.navbar-main .navbar-toggler {
-    padding: 3px 8px 2px 8px;
-    background-color: #282923;
-}
-
 .navbar-main .navbar-brand {
     /*main color*/
     color: #282923 !important;
 }
 
 .navbar-main .navbar-toggler {
-    border: solid 1px #282923 !important;
+    padding: 3px 8px 2px 8px;
+    border: solid 1px #fff !important;
     border-radius: 0px;
 }
 
