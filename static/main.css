@@ -464,7 +464,7 @@ small.plan4 {
 }
 
 .my-section h3 {
-    font-size: 24px;
+    font-size: 28px;
 }
 
 .my-section h3 span.badge {
@@ -503,6 +503,17 @@ small.plan4 {
     color: #048981;
 }
 
+.my-section ul {
+    padding: 30px;
+}
+
+.my-section ul li {
+    font-size: 20px;
+}
+
+.my-section ul li {
+    margin-bottom: 16px;
+}
 
 .my-section .card {
     border: 1px solid transparent;
