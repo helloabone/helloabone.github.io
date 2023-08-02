@@ -646,12 +646,17 @@ ul.outline {
 }
 
 @media (max-width:767px) {
+    .navbar-main .navbar-brand {
+        font-size: 24px;
+    }
+
     .navbar-main .navbar-collapse {
         margin: 0px -30px;
         width: 100%;
         /*background-color: #632600;*/
         background-color: #fff;
     }
+
     .navbar-main .nav-item .nav-link {
         text-align: left;
         font-size: 24px;
@@ -684,6 +689,11 @@ ul.outline {
         padding-bottom: 10px;
         border-bottom: 1px solid #282923;
         margin-bottom: 20px;
+    }
+
+    .nav-item .dropdown-item {
+        padding: 5px 40px;
+        font-size: 22px;
     }
 
     #my-carousel {
@@ -719,14 +729,5 @@ ul.outline {
 
     ol.its-flow * {
         font-size: 20px;
-    }
-
-    .navbar-main .navbar-brand {
-        font-size: 24px;
-    }
-
-    .nav-item .dropdown-item {
-        padding: 5px 40px;
-        font-size: 22px;
     }
 }
