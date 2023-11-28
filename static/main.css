@@ -718,6 +718,12 @@ ul.outline {
         font-size: 22px;
     }
 
+    a.line,
+    a.facebook {
+        margin: 0 6px;
+        font-size: 40px;
+    }
+
     #my-carousel {
         margin-top: 60px;
     }
