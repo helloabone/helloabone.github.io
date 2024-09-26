@@ -760,6 +760,7 @@ ul.outline {
 
     .my-section p,
     ul li,
+    ol li,
     blockquote * {
         font-size: 22px !important;
     }
