@@ -292,7 +292,6 @@ ol.its-flow * {
 }
 
 .texti-testcenter {
-    font-size: 20px !important;
     color: #b21016;
     font-weight: bold;
 }
@@ -757,6 +756,12 @@ ul.outline {
 
     ol.its-flow * {
         font-size: 20px;
+    }
+
+    .my-section p,
+    ul li,
+    blockquote * {
+        font-size: 22px !important;
     }
 }
 
