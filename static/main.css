@@ -534,15 +534,11 @@ small.plan4 {
 }
 
 .my-section ul {
-    padding: 30px;
+    padding: 10px 30px;
 }
 
 .my-section ul li {
     font-size: 20px;
-}
-
-.my-section ul li {
-    margin-bottom: 16px;
 }
 
 .my-section .card {
@@ -663,6 +659,10 @@ ol.outline {
 
 ul.outline {
     list-style-type: square;
+    font-size: 20px;
+}
+
+.alert p {
     font-size: 20px;
 }
 
