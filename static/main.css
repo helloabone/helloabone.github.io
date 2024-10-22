@@ -42,7 +42,7 @@ a.facebook:active {
 }
 
 blockquote p {
-    font-size: 20px !important;
+    font-size: 24px;
 }
 
 footer {
@@ -505,14 +505,6 @@ small.plan4 {
     border-radius: 0;
 }
 
-.my-section p {
-    line-height: 32px;
-}
-
-.my-section h4 {
-    font-size: 22px;
-}
-
 .my-section h3.plan0 i {
     color: #00b900;
 }
@@ -533,11 +525,16 @@ small.plan4 {
     color: #048981;
 }
 
+.my-section h4 {
+    font-size: 22px;
+}
+
 .my-section ul {
     padding: 10px 30px;
 }
 
 .my-section ul li {
+    line-height: 36px;
     font-size: 20px;
 }
 
@@ -558,7 +555,8 @@ small.plan4 {
 }
 
 .my-section p {
-    font-size: 18px;
+    line-height: 36px;
+    font-size: 20px;
 }
 
 .my-section img.img-fluid {
@@ -742,28 +740,35 @@ ul.outline {
 
     .my-section p,
     .my-section li {
-        font-size: 20px;
-        line-height: 32px;
+        line-height: 36px;
+        font-size: 22px;
+    }
+
+    .alert p {
+        font-size: 22px;
     }
 
     .list-group-item {
         font-size: 22px !important;
     }
 
-    ol.its-flow * {
-        font-size: 20px;
-    }
-
-    .my-section p,
-    ul li,
-    ol li,
+    ul.outline li,
+    ol.outline li,
     blockquote * {
-        font-size: 22px !important;
+        font-size: 22px;
     }
 
     ol.its-flow * {
         font-size: 22px;
         margin: 6px;
+    }
+
+    .btn-lg {
+        font-size: 22px;
+    }
+
+    .copy-right {
+        font-size: 20px !important;
     }
 }
 
