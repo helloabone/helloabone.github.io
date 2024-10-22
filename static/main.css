@@ -649,10 +649,6 @@ small.plan4 {
     border-width: 5px;
 }
 
-.fix-width120 {
-    width: 120px;
-}
-
 ol.outline {
     font-size: 20px;
 }
@@ -763,6 +759,11 @@ ul.outline {
     ol li,
     blockquote * {
         font-size: 22px !important;
+    }
+
+    ol.its-flow * {
+        font-size: 22px;
+        margin: 6px;
     }
 }
 
