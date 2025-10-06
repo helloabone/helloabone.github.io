@@ -3,22 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Python 編輯器 + Terminal (Pyodide)</title>
+<title>Liya.Py | 哈囉!程語</title>
+<link rel="icon" type="image/x-icon" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
 <!-- CodeMirror CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/codemirror.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/theme/monokai.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/theme/eclipse.min.css">
 
 <style>
-body { margin:0; font-family: monospace; font-size:24px; height:100vh; display:flex; background:#1e1e1e; color:#fff; }
+body { margin:0; font-family: monospace; font-size:28px; height:100vh; display:flex; background:#1e1e1e; color:#fff; }
 #container { display:flex; width:100%; height:100%; visibility:hidden; }
 #editor-container, #terminal-container { width:50%; height:100%; display:flex; flex-direction:column; min-width:0; }
 #editor-container { border-right:2px solid #444; }
-.CodeMirror { flex:1; height:100%; font-size:24px; }
-#output { flex:1; background:#1e1e1e; padding:10px; overflow-y:auto; white-space:pre-wrap; border-bottom:2px solid #444; font-size:24px; }
+.CodeMirror { flex:1; height:100%; font-size:28px; }
+#output { flex:1; background:#1e1e1e; padding:10px; overflow-y:auto; white-space:pre-wrap; border-bottom:2px solid #444; font-size:28px; }
 .error { color:#fbcfd0; }
-#input { height:100px; background:#2e2e2e; color:#0f0; padding:10px; border:none; resize:none; font-family:monospace; font-size:24px; }
-#run-btn { width:100%; padding:10px; font-size:24px; background:#333; color:#fff; border:none; cursor:pointer; }
+#input { height:100px; background:#2e2e2e; color:#ff69b4; padding:10px; border:none; resize:none; font-family:monospace; font-size:28px; }
+#run-btn { width:100%; padding:10px; font-size:28px; background:#333; color:#fff; border:none; cursor:pointer; }
 #run-btn:hover { background:#555; }
 
 /* Loading 樣式 */
@@ -31,12 +33,12 @@ body { margin:0; font-family: monospace; font-size:24px; height:100vh; display:f
     align-items:center;
     flex-direction:column;
     z-index:1000;
-    font-size:24px;
-    color:#0f0;
+    font-size:28px;
+    color:#ff69b4;
 }
 .loader {
     border: 6px solid #333;
-    border-top: 6px solid #0f0;
+    border-top: 6px solid #ff69b4;
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -53,21 +55,19 @@ body { margin:0; font-family: monospace; font-size:24px; height:100vh; display:f
 
 <div id="loading">
     <div class="loader"></div>
-    <div>Python 環境載入中...</div>
+    <div>哈囉!程語 - Python 環境載入中...</div>
 </div>
 
 <div id="container">
     <div id="editor-container">
-        <textarea id="editor"># 範例: 多行 input + 正確 print
+        <textarea id="editor"># 哈囉!程語
 name = input()
-age = int(input())
-print(f"{name} {age}")
-print("Hello", name, "you are", age, "years old")</textarea>
+print(f"Hello {name}!")</textarea>
     </div>
     <div id="terminal-container">
         <div id="output"></div>
-        <textarea id="input" placeholder="輸入多行，每行對應一個 input()" spellcheck="false"></textarea>
-        <button id="run-btn" disabled>執行程式</button>
+        <textarea id="input" placeholder="可以輸入多行，每行對應一個 input() 字串" spellcheck="false"></textarea>
+        <button id="run-btn" disabled>Run(執行)  ⯈</button>
     </div>
 </div>
 
@@ -88,7 +88,7 @@ let pyodide = null;
 let editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
     lineNumbers:true,
     mode:"python",
-    theme:"monokai",
+    theme:"eclipse",
     indentUnit:4,
     tabSize:4,
     matchBrackets:true,
@@ -148,7 +148,9 @@ runBtn.addEventListener("click", async ()=>{
             if(match) lineNumber = match[1];
         }
         let errStr = err.toString();
-        outputArea.innerHTML += `<span class="error">Line ${lineNumber}: ${errStr}</span><br>`;
+        let errPos = errStr.indexOf('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^');
+        errStr = errStr.slice(errPos);
+        outputArea.innerHTML += `<span class="error">${errStr}</span><br>`;
     }
 });
 </script>
