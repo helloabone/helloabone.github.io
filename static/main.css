@@ -326,7 +326,7 @@ ol.its-flow * {
 .hero-subtitle {
     max-width: 620px;
     margin: 0 0 28px;
-    font-size: 1.18rem;
+    font-size: 20px;
     line-height: 1.8;
     color: rgba(255,255,255,0.82);
 }
@@ -429,14 +429,14 @@ ol.its-flow * {
 .hero-points strong {
     display: block;
     color: #fff;
-    font-size: 1.2rem;
+    font-size: 20px;
     margin-bottom: 4px;
 }
 
 .hero-points span {
     display: block;
     color: rgba(255,255,255,0.72);
-    font-size: 1.08rem;
+    font-size: 20px;
     line-height: 1.7;
 }
 
@@ -549,7 +549,7 @@ ol.its-flow * {
     border-collapse: separate;
     border-spacing: 0 6px;
     color: #1d2433;
-    font-size: 1.134rem;
+    font-size: 20px;
     line-height: 1.5;
 }
 
@@ -889,7 +889,7 @@ small.plan4 {
     border-collapse: separate;
     border-spacing: 0 6px;
     color: #1d2433;
-    font-size: 1.134rem;
+    font-size: 20px;
     line-height: 1.5;
 }
 
@@ -1378,7 +1378,7 @@ small.plan4 {
     margin: 0;
     border-collapse: separate;
     border-spacing: 0 4px;
-    font-size: 1.134rem;
+    font-size: 20px;
     line-height: 1.45;
 }
 
