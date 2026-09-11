@@ -305,9 +305,9 @@ ol.its-flow * {
     padding: 9px 18px;
     border-radius: 999px;
     border: 1px solid rgba(255,255,255,0.18);
-    background: rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.18);
     color: #e7f4ff;
-    font-size: 1.152rem;
+    font-size: 24px;
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -316,7 +316,7 @@ ol.its-flow * {
 .hero-apcs h1 {
     margin: 0 0 18px;
     max-width: 650px;
-    font-size: clamp(2.2rem, 4vw, 4rem);
+    font-size: 42px;
     line-height: 1.14;
     font-weight: 800;
     color: #fff;
@@ -377,10 +377,10 @@ ol.its-flow * {
     justify-content: center;
     padding: 8px 14px;
     border-radius: 999px;
-    background: rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.18);
     border: 1px solid rgba(255,255,255,0.12);
     color: #ebf7ff;
-    font-size: 0.9rem;
+    font-size: 18px;
     font-weight: 600;
 }
 
@@ -403,7 +403,7 @@ ol.its-flow * {
 
 .panel-label {
     display: inline-block;
-    font-size: 1.0368rem;
+    font-size: 18px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: #c9e8ff;
@@ -540,7 +540,8 @@ ol.its-flow * {
 
 .jumbotron-project small {
     color: rgba(255,255,255,0.86);
-    font-size: 0.7em;
+    font-size: 28px;
+
 }
 
 .project-foundation-table {
@@ -616,7 +617,7 @@ ol.its-flow * {
     border-right: 1px solid #1d2433;
     border-bottom: 1px solid #1d2433;
     font-family: Consolas, monospace;
-    font-size: 1.25rem;
+    font-size: 20px;
     font-weight: 700;
 }
 
@@ -704,7 +705,7 @@ small.plan1,
 small.plan2,
 small.plan3,
 small.plan4 {
-    font-size: 0.7em;
+    font-size: 28px;
 }
 
 small.plan0 {
@@ -834,7 +835,7 @@ small.plan4 {
 .apcs-array-title {
     margin-bottom: 28px;
     color: #07528f;
-    font-size: 1.25rem;
+    font-size: 20px;
     font-weight: 800;
     text-align: center;
     letter-spacing: 0.12em;
@@ -862,7 +863,7 @@ small.plan4 {
     background: #fff;
     border: 2px solid #0e5ea8;
     font-family: Consolas, monospace;
-    font-size: 2.43rem;
+    font-size: 38.88px;
     font-weight: 700;
 }
 
@@ -879,7 +880,7 @@ small.plan4 {
     margin-top: 12px;
     color: #b8076f;
     font-family: Consolas, monospace;
-    font-size: 2.1rem;
+    font-size: 33.6px;
     font-weight: 700;
 }
 
@@ -950,7 +951,7 @@ small.plan4 {
     border-right: 4px solid #1d2433;
     border-bottom: 4px solid #1d2433;
     font-family: "Trebuchet MS", sans-serif;
-    font-size: 1.89rem;
+    font-size: 30.24px;
     font-weight: 800;
     line-height: 1;
 }
@@ -1064,7 +1065,7 @@ small.plan4 {
     color: #1d2433;
     background: #e7f1ff;
     font-family: Consolas, monospace;
-    font-size: 2.1rem;
+    font-size: 28px;
     font-weight: 700;
     line-height: 1;
     text-align: center;
@@ -1090,7 +1091,7 @@ small.plan4 {
     color: #b8076f;
     background: #fff;
     font-family: Consolas, monospace;
-    font-size: 2.187rem;
+    font-size: 32px;
     font-weight: 700;
     line-height: 1;
     z-index: 2;
@@ -1214,7 +1215,7 @@ small.plan4 {
     min-width: 126px;
     min-height: 68px;
     border-radius: 14px;
-    font-size: 1rem;
+    font-size: 16px;
     font-weight: 700;
     letter-spacing: 0.08em;
     color: #123d66;
@@ -1263,7 +1264,7 @@ small.plan4 {
     background: rgba(238,10,143,0.12);
     border: 1px solid rgba(238,10,143,0.22);
     color: #b21016;
-    font-size: 0.78rem;
+    font-size: 12.48px;
     font-weight: 800;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -1395,8 +1396,7 @@ small.plan4 {
 }
 
 .training-highlights-table td {
-    color: #fff;
-    background: rgba(184, 7, 111, 0.7);
+    color: #000;
     text-align: center;
 }
 
@@ -1552,6 +1552,10 @@ footer .copy-right {
 }
 
 @media (max-width:767px) {
+    .hero-apcs h1 {
+        font-size: 35.2px;
+    }
+
     h1 {
         margin-bottom: -30px;
     }
@@ -1622,11 +1626,11 @@ footer .copy-right {
     }
 
     #my-carousel .carousel-caption h2 {
-        font-size: 8vw;
+        font-size: 64px;
     }
 
     #my-carousel .carousel-caption h3 {
-        font-size: 6vw;
+        font-size: 48px;
     }
 
     #my-carousel .carousel-caption p {
@@ -1664,6 +1668,34 @@ footer .copy-right {
 
     .copy-right {
         font-size: 20px !important;
+    }
+}
+
+@media (max-width:575px) {
+    .apcs-foundation-table,
+    .project-foundation-table {
+        border-spacing: 0;
+    }
+
+    .apcs-foundation-table tr,
+    .project-foundation-table tr,
+    .apcs-foundation-table th,
+    .apcs-foundation-table td,
+    .project-foundation-table th,
+    .project-foundation-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .apcs-foundation-table th,
+    .project-foundation-table th {
+        border-radius: 4px 4px 0 0;
+    }
+
+    .apcs-foundation-table td,
+    .project-foundation-table td {
+        border-radius: 0 0 4px 4px;
+        border-bottom: 1px solid rgba(7,82,143,0.25);
     }
 }
 
