@@ -9,7 +9,7 @@
 
 <!-- CodeMirror CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/codemirror.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/theme/monokai.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/theme/material.min.css">
 
 <style>
 body { margin:0; font-family: monospace; font-size:28px; height:100vh; display:flex; background:#1e1e1e; color:#fff; }
@@ -35,11 +35,11 @@ body { margin:0; font-family: monospace; font-size:28px; height:100vh; display:f
     flex-direction:column;
     z-index:1000;
     font-size:28px;
-    color:#e6db74;
+    color:#f0f0f0;
 }
 .loader {
     border: 6px solid #333;
-    border-top: 6px solid #e6db74;
+    border-top: 6px solid #f0f0f0;
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -67,7 +67,7 @@ print(f"Hello {name}!")</textarea>
     </div>
     <div id="terminal-container">
         <div id="output"></div>
-        <textarea id="input" placeholder="可輸入多行，每行對應一個 input() 字串" spellcheck="false"></textarea>
+        <textarea id="input" placeholder="一行輸入對應一個 input() 字串" spellcheck="false"></textarea>
         <button id="run-btn" disabled>Run(執行)  ⯈</button>
     </div>
 </div>
@@ -89,7 +89,7 @@ let pyodide = null;
 let editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
     lineNumbers:true,
     mode:"python",
-    theme:"monokai",
+    theme:"material",
     indentUnit:4,
     tabSize:4,
     matchBrackets:true,

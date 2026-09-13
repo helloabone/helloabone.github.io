@@ -35,11 +35,11 @@ body { margin:0; font-family: monospace; font-size:28px; height:100vh; display:f
     flex-direction:column;
     z-index:1000;
     font-size:28px;
-    color:#0f0;
+    color:#f0f0f0;
 }
 .loader {
     border: 6px solid #333;
-    border-top: 6px solid #0f0;
+    border-top: 6px solid #f0f0f0;
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -67,7 +67,7 @@ print(f"Hello {name}!")</textarea>
     </div>
     <div id="terminal-container">
         <div id="output"></div>
-        <textarea id="input" placeholder="可輸入多行，每行對應一個 input() 字串" spellcheck="false"></textarea>
+        <textarea id="input" placeholder="一行輸入對應一個 input() 字串" spellcheck="false"></textarea>
         <button id="run-btn" disabled>Run(執行) ⯈</button>
     </div>
 </div>
