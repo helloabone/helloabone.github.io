@@ -190,10 +190,10 @@ blockquote p {
 }
 
 p.texti-plan0,
-p.texti-plan1,
-p.texti-plan2,
-p.texti-plan3,
-p.texti-plan4 {
+p.texti-level1,
+p.texti-level2,
+p.texti-level3,
+p.texti-level4 {
     color: #555;
     font-size: 24px !important;
 }
@@ -204,26 +204,26 @@ p.texti-plan0 span {
     font-weight: bold;
 }
 
-.texti-plan1,
-p.texti-plan1 span {
+.texti-level1,
+p.texti-level1 span {
     color: #0e5ea8;
     font-weight: bold;
 }
 
-.texti-plan2,
-p.texti-plan2 span {
+.texti-level2,
+p.texti-level2 span {
     color: #ee0a8f;
     font-weight: bold;
 }
 
-.texti-plan3,
-p.texti-plan3 span {
+.texti-level3,
+p.texti-level3 span {
     color: #0e5ea8;
     font-weight: bold;
 }
 
-.texti-plan4,
-p.texti-plan4 span {
+.texti-level4,
+p.texti-level4 span {
     color: #ee0a8f;
     font-weight: bold;
 }
@@ -305,8 +305,8 @@ ol.its-flow * {
     padding: 9px 18px;
     border-radius: 999px;
     border: 1px solid rgba(255,255,255,0.18);
-    background: rgba(255,255,255,0.18);
-    color: #e7f4ff;
+    background: #2e87d9;
+    color: #fff;
     font-size: 24px;
     font-weight: 700;
     letter-spacing: 0.12em;
@@ -377,10 +377,10 @@ ol.its-flow * {
     justify-content: center;
     padding: 8px 14px;
     border-radius: 999px;
-    background: rgba(255,255,255,0.18);
+    background: #2e87d9;
     border: 1px solid rgba(255,255,255,0.12);
-    color: #ebf7ff;
-    font-size: 18px;
+    color: #fff;
+    font-size: 20px;
     font-weight: 600;
 }
 
@@ -403,7 +403,7 @@ ol.its-flow * {
 
 .panel-label {
     display: inline-block;
-    font-size: 18px;
+    font-size: 20px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: #c9e8ff;
@@ -435,7 +435,7 @@ ol.its-flow * {
 
 .hero-points span {
     display: block;
-    color: rgba(255,255,255,0.72);
+    color: rgba(255,255,255,0.85);
     font-size: 20px;
     line-height: 1.7;
 }
@@ -446,22 +446,22 @@ ol.its-flow * {
     padding: 20px;
 }
 
-.bg-plan1 {
+.bg-level1 {
     background: #c8dceb;
     padding: 20px;
 }
 
-.bg-plan2 {
+.bg-level2 {
     background: #d0e1ef;
     padding: 20px;
 }
 
-.bg-plan3 {
+.bg-level3 {
     background: #c3d9e9;
     padding: 20px;
 }
 
-.bg-plan4 {
+.bg-level4 {
     background: #cadfed;
     padding: 20px;
 }
@@ -481,10 +481,10 @@ ol.its-flow * {
 
 /* custom jumbotron */
 .jumbotron-plan0,
-.jumbotron-plan1,
-.jumbotron-plan2,
-.jumbotron-plan3,
-.jumbotron-plan4 {
+.jumbotron-level1,
+.jumbotron-level2,
+.jumbotron-level3,
+.jumbotron-level4 {
     color: #fff;
     margin: 20px 0;
     padding: 40px 0 1px;
@@ -493,10 +493,10 @@ ol.its-flow * {
 }
 
 .jumbotron-plan0 h2,
-.jumbotron-plan1 h2,
-.jumbotron-plan2 h2,
-.jumbotron-plan3 h2,
-.jumbotron-plan4 h2 {
+.jumbotron-level1 h2,
+.jumbotron-level2 h2,
+.jumbotron-level3 h2,
+.jumbotron-level4 h2 {
     font-size: 42px !important;
 }
 
@@ -505,22 +505,22 @@ ol.its-flow * {
     background: #07528f;
 }
 
-.jumbotron-plan1 {
+.jumbotron-level1 {
     color: #fff;
     background: #07528f;
 }
 
-.jumbotron-plan2 {
+.jumbotron-level2 {
     color: #fff;
     background: #07528f;
 }
 
-.jumbotron-plan3 {
+.jumbotron-level3 {
     color: #fff;
     background: #07528f;
 }
 
-.jumbotron-plan4 {
+.jumbotron-level4 {
     color: #fff;
     background: #07528f;
 }
@@ -701,10 +701,10 @@ ol.its-flow * {
 
 
 small.plan0,
-small.plan1,
-small.plan2,
-small.plan3,
-small.plan4 {
+small.level1,
+small.level2,
+small.level3,
+small.level4 {
     font-size: 28px;
 }
 
@@ -712,19 +712,19 @@ small.plan0 {
     color: rgba(255,255,255,0.8);
 }
 
-small.plan1 {
+small.level1 {
     color: rgba(255,255,255,0.8);
 }
 
-small.plan2 {
+small.level2 {
     color: rgba(255,255,255,0.8);
 }
 
-small.plan3 {
+small.level3 {
     color: rgba(255,255,255,0.8);
 }
 
-small.plan4 {
+small.level4 {
     color: rgba(255,255,255,0.8);
 }
 
@@ -760,19 +760,19 @@ small.plan4 {
     color: #ee0a8f;
 }
 
-.my-section h3.plan1 i {
+.my-section h3.level1 i {
     color: #0e5ea8;
 }
 
-.my-section h3.plan2 i {
+.my-section h3.level2 i {
     color: #ee0a8f;
 }
 
-.my-section h3.plan3 i {
+.my-section h3.level3 i {
     color: #0e5ea8;
 }
 
-.my-section h3.plan4 i {
+.my-section h3.level4 i {
     color: #ee0a8f;
 }
 
@@ -1323,20 +1323,20 @@ small.plan4 {
     bottom: 56px;
 }
 
-.tech-plan1 { background: #e7f1ff; }
-.tech-plan2 { background: #f2ecff; }
-.tech-plan3 { background: #ebf5ff; }
-.tech-plan4 { background: #f4edff; }
+.tech-level1 { background: #e7f1ff; }
+.tech-level2 { background: #f2ecff; }
+.tech-level3 { background: #ebf5ff; }
+.tech-level4 { background: #f4edff; }
 
-.tech-plan1 .tech-chip { background: rgba(14,94,168,0.1); border-color: rgba(14,94,168,0.2); color: #0e5ea8; }
-.tech-plan2 .tech-chip { background: rgba(238,10,143,0.12); border-color: rgba(238,10,143,0.24); color: #b21016; }
-.tech-plan3 .tech-chip { background: rgba(14,94,168,0.1); border-color: rgba(14,94,168,0.24); color: #0e5ea8; }
-.tech-plan4 .tech-chip { background: rgba(238,10,143,0.12); border-color: rgba(238,10,143,0.24); color: #b21016; }
+.tech-level1 .tech-chip { background: rgba(14,94,168,0.1); border-color: rgba(14,94,168,0.2); color: #0e5ea8; }
+.tech-level2 .tech-chip { background: rgba(238,10,143,0.12); border-color: rgba(238,10,143,0.24); color: #b21016; }
+.tech-level3 .tech-chip { background: rgba(14,94,168,0.1); border-color: rgba(14,94,168,0.24); color: #0e5ea8; }
+.tech-level4 .tech-chip { background: rgba(238,10,143,0.12); border-color: rgba(238,10,143,0.24); color: #b21016; }
 
-.tech-plan1 .tech-card { color: #0e5ea8; }
-.tech-plan2 .tech-card { color: #d61368; }
-.tech-plan3 .tech-card { color: #0e5ea8; }
-.tech-plan4 .tech-card { color: #d61368; }
+.tech-level1 .tech-card { color: #0e5ea8; }
+.tech-level2 .tech-card { color: #d61368; }
+.tech-level3 .tech-card { color: #0e5ea8; }
+.tech-level4 .tech-card { color: #d61368; }
 
 .venn-figure {
     position: relative;
@@ -1422,7 +1422,7 @@ small.plan4 {
 }
 
 .my-section .list-group-item {
-    font-size: 18px;
+    font-size: 20px;
     padding: 8px;
 }
 
@@ -1607,6 +1607,10 @@ footer .copy-right {
 
     .nav-item .dropdown-item {
         padding: 5px 40px;
+        font-size: 22px;
+    }
+
+    .hero-subtitle {
         font-size: 22px;
     }
 
