@@ -305,7 +305,7 @@ ol.its-flow * {
     padding: 9px 18px;
     border-radius: 999px;
     border: 1px solid rgba(255,255,255,0.18);
-    background: #2e87d9;
+    background: rgba(255,255,255,0.25);
     color: #fff;
     font-size: 24px;
     font-weight: 700;
@@ -377,7 +377,7 @@ ol.its-flow * {
     justify-content: center;
     padding: 8px 14px;
     border-radius: 999px;
-    background: #2e87d9;
+    background: rgba(255,255,255,0.25);
     border: 1px solid rgba(255,255,255,0.12);
     color: #fff;
     font-size: 20px;
@@ -406,7 +406,7 @@ ol.its-flow * {
     font-size: 20px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: #c9e8ff;
+    color: #fff766;
     font-weight: 700;
 }
 
