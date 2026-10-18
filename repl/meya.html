@@ -12,16 +12,16 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/theme/material.min.css">
 
 <style>
-body { margin:0; font-family: monospace; font-size:28px; height:100vh; display:flex; background:#1e1e1e; color:#fff; }
+body { margin:0; font-family: monospace; font-size:23px; height:100vh; display:flex; background:#1e1e1e; color:#fff; }
 #container { display:flex; width:100%; height:100%; visibility:hidden; }
 #editor-container { width:60%; height:100%; display:flex; flex-direction:column; min-width:0; }
 #terminal-container { width:40%; height:100%; display:flex; flex-direction:column; min-width:0; }
 #editor-container { border-right:2px solid #444; }
-.CodeMirror { flex:1; height:100%; font-size:28px; }
-#output { flex:1; background:#1e1e1e; padding:10px; overflow-y:auto; white-space:pre-wrap; border-bottom:2px solid #444; font-size:28px; }
+.CodeMirror { flex:1; height:100%; font-size:23px; }
+#output { flex:1; background:#1e1e1e; padding:10px; overflow-y:auto; white-space:pre-wrap; border-bottom:2px solid #444; font-size:23px; }
 .error { color:#fbcfd0; }
-#input { height:100px; background:#2e2e2e; color:#e6db74; padding:10px; border:none; resize:none; font-family:monospace; font-size:28px; }
-#run-btn { width:100%; padding:10px; font-size:28px; background:#1bc41b; color:#fff; border:none; cursor:pointer; }
+#input { height:100px; background:#2e2e2e; color:#e6db74; padding:10px; border:none; resize:none; font-family:monospace; font-size:23px; }
+#run-btn { width:100%; padding:10px; font-size:23px; background:#1bc41b; color:#fff; border:none; cursor:pointer; }
 #run-btn:hover { background:#11a211; }
 
 /* Loading 樣式 */
@@ -34,7 +34,7 @@ body { margin:0; font-family: monospace; font-size:28px; height:100vh; display:f
     align-items:center;
     flex-direction:column;
     z-index:1000;
-    font-size:28px;
+    font-size:23px;
     color:#f0f0f0;
 }
 .loader {

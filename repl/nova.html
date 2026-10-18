@@ -11,7 +11,7 @@
 <style>
 * { box-sizing: border-box; }
 body { margin:0; font-family:Consolas, "Courier New", monospace; height:100vh; background:#1e1e1e; color:#eee; }
-#loading { position:fixed; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px; background:#1e1e1e; z-index:10; }
+#loading { font-size:23px; position:fixed; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px; background:#1e1e1e; z-index:10; }
 .loader { width:48px; height:48px; border:5px solid #444; border-top-color:#eee; border-radius:50%; animation:spin 1s linear infinite; }
 @keyframes spin { to { transform:rotate(360deg); } }
 #container { display:flex; width:100%; height:100%; visibility:hidden; }
@@ -19,13 +19,13 @@ body { margin:0; font-family:Consolas, "Courier New", monospace; height:100vh; b
 #terminal-container { width:40%; min-width:0; display:flex; flex-direction:column; }
 .pane-title { padding:10px 14px; background:#252526; border-bottom:1px solid #444; font-size:15px; color:#ddd; display:flex; justify-content:space-between; align-items:center; gap:10px; }
 #editor { flex:1; min-height:0; }
-.CodeMirror { height:100%; flex:1; font-size:18px; }
+.CodeMirror { height:100%; flex:1; font-size:23px; }
 #terminal { flex:1; min-height:0; overflow:auto; padding:14px; white-space:pre-wrap; overflow-wrap:anywhere; font-size:17px; line-height:1.55; }
 .line { white-space:pre-wrap; overflow-wrap:anywhere; }
-.stdout { color:#eee; }
-.stderr { color:#ffaaaa; }
-.prompt { color:#e6db74; }
-.status { color:#9cdcfe; font-size:13px; }
+.stdout { font-size:23px; color:#eee; }
+.stderr { font-size:23px; color:#ffaaaa; }
+.prompt { font-size:23px; color:#e6db74; }
+.status { font-size:13px; color:#9cdcfe; }
 #input-row { display:flex; gap:8px; padding:10px; border-top:1px solid #444; background:#252526; }
 #terminal-input { min-width:0; flex:1; padding:10px; border:1px solid #555; border-radius:4px; background:#333; color:#fff; font:inherit; font-size:16px; outline:none; }
 #terminal-input:focus { border-color:#9b7ede; }
