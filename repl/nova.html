@@ -90,7 +90,7 @@ const stopBtn = document.getElementById("stop-btn");
 
 const editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
   lineNumbers:true, mode:"python", theme:"neat", indentUnit:4, tabSize:4,
-  matchBrackets:true, autoCloseBrackets:true, keyMap:"sublime",
+  matchBrackets:false, autoCloseBrackets:false, keyMap:"sublime",
   extraKeys:{
     Tab: cm => cm.somethingSelected() ? cm.indentSelection("add") : cm.replaceSelection("    ","end"),
     "Shift-Tab": cm => cm.indentSelection("subtract")
