@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nova.Py | 哈囉!程語 - 互動式 Python 編輯器</title>
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/codemirror.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/theme/neat.min.css">
+<style>
+* { box-sizing: border-box; }
+body { margin:0; font-family:Consolas, "Courier New", monospace; height:100vh; background:#1e1e1e; color:#eee; }
+#loading { position:fixed; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px; background:#1e1e1e; z-index:10; }
+.loader { width:48px; height:48px; border:5px solid #444; border-top-color:#eee; border-radius:50%; animation:spin 1s linear infinite; }
+@keyframes spin { to { transform:rotate(360deg); } }
+#container { display:flex; width:100%; height:100%; visibility:hidden; }
+#editor-container { width:60%; min-width:0; display:flex; flex-direction:column; border-right:2px solid #444; }
+#terminal-container { width:40%; min-width:0; display:flex; flex-direction:column; }
+.pane-title { padding:10px 14px; background:#252526; border-bottom:1px solid #444; font-size:15px; color:#ddd; display:flex; justify-content:space-between; align-items:center; gap:10px; }
+#editor { flex:1; min-height:0; }
+.CodeMirror { height:100%; flex:1; font-size:18px; }
+#terminal { flex:1; min-height:0; overflow:auto; padding:14px; white-space:pre-wrap; overflow-wrap:anywhere; font-size:17px; line-height:1.55; }
+.line { white-space:pre-wrap; overflow-wrap:anywhere; }
+.stdout { color:#eee; }
+.stderr { color:#ffaaaa; }
+.prompt { color:#e6db74; }
+.status { color:#9cdcfe; font-size:13px; }
+#input-row { display:flex; gap:8px; padding:10px; border-top:1px solid #444; background:#252526; }
+#terminal-input { min-width:0; flex:1; padding:10px; border:1px solid #555; border-radius:4px; background:#333; color:#fff; font:inherit; font-size:16px; outline:none; }
+#terminal-input:focus { border-color:#9b7ede; }
+button { font:inherit; border:0; border-radius:4px; padding:9px 13px; cursor:pointer; }
+#send-btn { background:#6d45a6; color:#fff; }
+#toolbar { display:flex; gap:8px; padding:10px; background:#252526; border-top:1px solid #444; }
+#run-btn { flex:1; background:#1bc41b; color:#fff; }
+#stop-btn { background:#a33; color:#fff; }
+button:disabled { opacity:.45; cursor:not-allowed; }
+#hint { padding:8px 12px; color:#aaa; font-size:12px; border-top:1px solid #333; }
+@media (max-width:760px) {
+  body { height:auto; min-height:100vh; }
+  #container { height:auto; min-height:100vh; flex-direction:column; }
+  #editor-container, #terminal-container { width:100%; height:50vh; min-height:300px; }
+  #editor-container { border-right:0; border-bottom:2px solid #444; }
+  .CodeMirror { min-height:260px; }
+  #terminal { min-height:180px; }
+}
+</style>
+</head>
+<body>
+<div id="loading"><div class="loader"></div><div>哈囉!程語 - Python 環境載入中...</div><div id="load-error" role="alert"></div></div>
+<div id="container">
+  <section id="editor-container">
+    <div class="pane-title"><span>Python 編輯器</span></div>
+    <textarea id="editor"></textarea>
+  </section>
+  <section id="terminal-container">
+    <div class="pane-title"><span>互動式終端機</span><span id="status" class="status">正在初始化...</span></div>
+    <div id="terminal" aria-live="polite"></div>
+    <div id="input-row">
+      <input id="terminal-input" type="text" autocomplete="off" spellcheck="false" placeholder="程式等待輸入時，請在此輸入..." disabled>
+      <button id="send-btn" disabled>送出 [Enter]</button>
+    </div>
+    <div id="toolbar">
+      <button id="run-btn" disabled>執行</button>
+      <button id="stop-btn" disabled>清除終端機</button>
+    </div>
+  </section>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/mode/python/python.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/addon/edit/matchbrackets.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/addon/edit/closebrackets.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/keymap/sublime.min.js"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+<script>
+"use strict";
+let pyodide = null;
+let isRunning = false;
+let waitingForInput = false;
+let inputResolver = null;
+let runToken = 0;
+
+const terminal = document.getElementById("terminal");
+const statusEl = document.getElementById("status");
+const terminalInput = document.getElementById("terminal-input");
+const sendBtn = document.getElementById("send-btn");
+const runBtn = document.getElementById("run-btn");
+const stopBtn = document.getElementById("stop-btn");
+
+const editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
+  lineNumbers:true, mode:"python", theme:"neat", indentUnit:4, tabSize:4,
+  matchBrackets:true, autoCloseBrackets:true, keyMap:"sublime",
+  extraKeys:{
+    Tab: cm => cm.somethingSelected() ? cm.indentSelection("add") : cm.replaceSelection("    ","end"),
+    "Shift-Tab": cm => cm.indentSelection("subtract")
+  }
+});
+editor.setSize("100%","100%");
+
+const STORAGE_KEY = "hello_py_editor_code";
+try {
+  const savedCode = localStorage.getItem(STORAGE_KEY);
+  if (savedCode !== null) editor.setValue(savedCode);
+  editor.on("change", () => {
+    try { localStorage.setItem(STORAGE_KEY, editor.getValue()); } catch (_) {}
+  });
+} catch (_) {}
+
+function addLine(text, className="stdout") {
+  const div = document.createElement("div");
+  div.className = "line " + className;
+  div.textContent = text;
+  terminal.appendChild(div);
+  terminal.scrollTop = terminal.scrollHeight;
+}
+function setStatus(text) { statusEl.textContent = text; }
+function askInput(promptText) {
+  // Show the prompt when provided; an empty prompt still waits for input normally.
+  if (promptText) addLine(promptText, "prompt");
+  waitingForInput = true;
+  terminalInput.disabled = false;
+  sendBtn.disabled = false;
+  setStatus("等待輸入…");
+  terminalInput.value = "";
+  terminalInput.focus();
+  return new Promise(resolve => { inputResolver = resolve; });
+}
+function submitInput() {
+  if (!waitingForInput || !inputResolver) return;
+  const value = terminalInput.value;
+  addLine(value, "prompt");
+  const resolve = inputResolver;
+  inputResolver = null;
+  waitingForInput = false;
+  terminalInput.disabled = true;
+  sendBtn.disabled = true;
+  resolve(value);
+  setStatus("執行中…");
+}
+sendBtn.addEventListener("click", submitInput);
+terminalInput.addEventListener("keydown", event => {
+  if (event.key === "Enter") { event.preventDefault(); submitInput(); }
+});
+
+function transformBeginnerCode(source) {
+  // This lightweight transformation enables top-level input() by converting it to await __ui_input__().
+  // It intentionally targets beginner scripts; it is not a complete Python parser.
+  const lines = source.replace(/\r\n/g, "\n").split("\n");
+  const transformed = lines.map(line => {
+    // Leave comments and blank lines unchanged.
+    if (/^\s*#/.test(line) || /^\s*$/.test(line)) return line;
+    // Replace simple input(...) calls and wrap the awaited result in parentheses.
+    // Parentheses are important for expressions such as input().split(), otherwise
+    // Python may try to call .split() on the pending PyodideFuture itself.
+    // Supported examples: input(), input("Prompt"), int(input()), input().split()
+    return line.replace(/\binput\s*\(([^()]*)\)/g, "(await __ui_input__($1))");
+  });
+  // Wrap the program in an async function so await can be used at top level.
+  // Indent every original line under the function body.
+  return "async def __browser_main__():\n" +
+    transformed.map(line => "    " + line).join("\n") +
+    "\nawait __browser_main__()";
+}
+
+async function init() {
+  try {
+    pyodide = await loadPyodide();
+    // Return a JavaScript Promise to Python. Pyodide supports awaiting
+    // JavaScript Promises from Python async code.
+    pyodide.globals.set("__ui_input__", promptText => {
+      return askInput(String(promptText ?? ""));
+    });
+    pyodide.setStdout({ batched: text => addLine(text, "stdout") });
+    pyodide.setStderr({ batched: text => addLine(text, "stderr") });
+    document.getElementById("loading").style.display = "none";
+    document.getElementById("container").style.visibility = "visible";
+    runBtn.disabled = false;
+    stopBtn.disabled = false;
+    setStatus("就緒");
+  } catch (err) {
+    document.getElementById("load-error").textContent = "載入失敗：" + String(err) + "。請確認網路連線後重新整理。";
+    setStatus("載入失敗");
+  }
+}
+
+async function runCode() {
+  if (!pyodide || isRunning) return;
+  isRunning = true;
+  const thisRun = ++runToken;
+  // Reset input state before starting a new program.
+  waitingForInput = false;
+  inputResolver = null;
+  runBtn.disabled = true;
+  terminalInput.disabled = true;
+  sendBtn.disabled = true;
+  terminal.replaceChildren();
+  setStatus("執行中…");
+  try {
+    const source = editor.getValue();
+    const code = transformBeginnerCode(source);
+    await pyodide.runPythonAsync(code);
+    if (thisRun === runToken) setStatus("程式結束");
+    addLine("[程式執行完畢]", "status");
+  } catch (err) {
+    // The generated Python code adds one wrapper line before the user's code.
+    // Correct traceback line numbers for frames inside __browser_main__.
+    const rawError = String(err);
+    const correctedError = rawError.replace(
+      /(File \"<exec>\", line )(\d+)(, in __browser_main__)/g,
+      (match, before, lineText, after) => before + Math.max(1, Number(lineText) - 1) + after
+    );
+    addLine(correctedError, "stderr");
+    const match = rawError.match(/File \"<exec>\", line (\d+), in __browser_main__/);
+    if (match) {
+      const originalLine = Math.max(1, Number(match[1]) - 1);
+      addLine("錯誤位置：你的 Python 程式第 " + originalLine + " 行", "stderr");
+    }
+    setStatus("執行錯誤");
+  } finally {
+    isRunning = false;
+    waitingForInput = false;
+    inputResolver = null;
+    terminalInput.disabled = true;
+    sendBtn.disabled = true;
+    runBtn.disabled = false;
+  }
+}
+runBtn.addEventListener("click", runCode);
+stopBtn.addEventListener("click", () => {
+  if (waitingForInput && inputResolver) {
+    const resolve = inputResolver;
+    inputResolver = null;
+    waitingForInput = false;
+    terminalInput.disabled = true;
+    sendBtn.disabled = true;
+    resolve("");
+  }
+  terminal.replaceChildren();
+  if (!isRunning) setStatus("就緒");
+});
+init();
+</script>
+</body>
+</html>
