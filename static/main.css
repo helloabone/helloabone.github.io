@@ -399,11 +399,12 @@ ol.its-flow * {
 .panel-header {
     padding: 18px 22px 12px;
     border-bottom: 1px solid rgba(255,255,255,0.08);
+    font-size: 24px;
 }
 
 .panel-label {
     display: inline-block;
-    font-size: 20px;
+    font-size: 22px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: #fff766;
@@ -429,14 +430,14 @@ ol.its-flow * {
 .hero-points strong {
     display: block;
     color: #fff;
-    font-size: 20px;
+    font-size: 22px;
     margin-bottom: 4px;
 }
 
 .hero-points span {
     display: block;
     color: rgba(255,255,255,0.85);
-    font-size: 20px;
+    font-size: 22px;
     line-height: 1.7;
 }
 
