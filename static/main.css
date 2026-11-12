@@ -1,5 +1,5 @@
 body, input, button, select, textarea {
-    font-family: "Helvetica Neue", Helvetica,Arial, "Microsoft JhengHei", "Microsoft YaHei", Meiryo, "Meiryo UI", sans-serif;
+    font-family: Consolas, "SFMono-Regular", Menlo, Monaco, "Roboto Mono", "DejaVu Sans Mono", "Liberation Mono", monospace;
 }
 
 body {
@@ -173,20 +173,9 @@ blockquote p {
     color: #eb4381;
 }
 
-.texti-price {
-    color: #555;
-}
-
-.texti-price,
-.texti-price span {
-    font-family: Quicksand, "Microsoft JhengHei";
-    font-weight: 400;
-    padding: 10px 0;
-}
-
 .texti-code,
 .texti-code * {
-    font-family: Consolas, "Microsoft JhengHei" !important;
+    font-family: Consolas, "SFMono-Regular", Menlo, Monaco, "Roboto Mono", "DejaVu Sans Mono", "Liberation Mono", monospace;
 }
 
 p.texti-plan0,
@@ -234,7 +223,7 @@ ol.its-flow * {
 }
 
 .texti-subject {
-    font-family: Consolas;
+    font-family: Consolas, "SFMono-Regular", Menlo, Monaco, "Roboto Mono", "DejaVu Sans Mono", "Liberation Mono", monospace;
     font-size: 24px !important;
 }
 
@@ -617,7 +606,7 @@ ol.its-flow * {
     background: transparent;
     border-right: 1px solid #1d2433;
     border-bottom: 1px solid #1d2433;
-    font-family: Consolas, monospace;
+    font-family: Consolas, "SFMono-Regular", Menlo, Monaco, "Roboto Mono", "DejaVu Sans Mono", "Liberation Mono", monospace;
     font-size: 20px;
     font-weight: 700;
 }
@@ -863,7 +852,7 @@ small.level4 {
     color: #07528f;
     background: #fff;
     border: 2px solid #0e5ea8;
-    font-family: Consolas, monospace;
+    font-family: Consolas, "SFMono-Regular", Menlo, Monaco, "Roboto Mono", "DejaVu Sans Mono", "Liberation Mono", monospace;
     font-size: 32px;
     font-weight: 700;
 }
@@ -880,7 +869,7 @@ small.level4 {
     display: block;
     margin-top: 12px;
     color: #b8076f;
-    font-family: Consolas, monospace;
+    font-family: Consolas, "SFMono-Regular", Menlo, Monaco, "Roboto Mono", "DejaVu Sans Mono", "Liberation Mono", monospace;
     font-size: 28px;
     font-weight: 700;
 }
@@ -951,7 +940,7 @@ small.level4 {
     color: #1d2433;
     border-right: 4px solid #1d2433;
     border-bottom: 4px solid #1d2433;
-    font-family: "Trebuchet MS", sans-serif;
+    font-family: Consolas, "SFMono-Regular", Menlo, Monaco, "Roboto Mono", "DejaVu Sans Mono", "Liberation Mono", monospace;
     font-size: 30.24px;
     font-weight: 800;
     line-height: 1;
@@ -1065,7 +1054,7 @@ small.level4 {
     min-width: 24px;
     color: #1d2433;
     background: #e7f1ff;
-    font-family: Consolas, monospace;
+    font-family: Consolas, "SFMono-Regular", Menlo, Monaco, "Roboto Mono", "DejaVu Sans Mono", "Liberation Mono", monospace;
     font-size: 28px;
     font-weight: 700;
     line-height: 1;
@@ -1091,7 +1080,7 @@ small.level4 {
     border-radius: 50%;
     color: #b8076f;
     background: #fff;
-    font-family: Consolas, monospace;
+    font-family: Consolas, "SFMono-Regular", Menlo, Monaco, "Roboto Mono", "DejaVu Sans Mono", "Liberation Mono", monospace;
     font-size: 32px;
     font-weight: 700;
     line-height: 1;
@@ -1437,7 +1426,7 @@ small.level4 {
 
 .icon-text {
     font-size: 24px;
-    font-family: "Days One", sans-serif,"Microsoft JhengHei";
+    font-family: Consolas, "SFMono-Regular", Menlo, Monaco, "Roboto Mono", "DejaVu Sans Mono", "Liberation Mono", monospace;
     margin-bottom: 40px;
 }
 
